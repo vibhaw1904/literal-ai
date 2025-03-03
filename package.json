@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@literalai/client": "^0.1.5",
+    "ai": "^4.1.47",
+    "dummy": "file:",
+    "next": "15.2.0",
+    "openai": "^4.86.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.0"
+    "stream-web": "^0.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
