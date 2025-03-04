@@ -14,20 +14,22 @@ literalClient.instrumentation.openai();
 
 export async function POST(req: Request) {
   const { messages, threadId, runId } = await req.json();
-  
+  const participantId = await literalClient.api.getOrCreateUser('vibhaw');
+
   const userMessage = messages[messages.length - 1].content;
   
   const thread = literalClient.thread({
     id: threadId,
-    name: `User Conversation ${new Date().toLocaleString()}`
+   participantId:participantId
   });
   
+
   try {
     return await thread.wrap(async () => {
       await literalClient
         .step({
           type: "user_message",
-          name: "User Question",
+          name: "vibhaw",
           output: { content: userMessage }
         })
         .send();
